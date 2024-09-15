@@ -239,15 +239,6 @@ require('lazy').setup({
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      }
-    end,
-    keys = {
-      {
-        '<leader>?',
-        function()
-          require('which-key').show { global = true }
-        end,
-        desc = 'Global Keymaps',
       },
     },
   },
@@ -787,7 +778,9 @@ require('lazy').setup({
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     -- 'sainnhe/everforest',
     -- 'catppuccin/nvim',
-    'navarasu/onedark.nvim',
+    -- 'navarasu/onedark.nvim',
+    -- 'mhartington/oceanic-next',
+    'rmehri01/onenord.nvim',
     -- 'Mofiqul/vscode.nvim',
     -- 'folke/tokyonight',
     -- 'AlexvZyl/nordic.nvim',
@@ -798,9 +791,7 @@ require('lazy').setup({
     lazy = false,
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
-      -- require('onedark').setup {
-      --   style = 'dark',
-      -- }
+      require('onenord').setup {}
       -- vim.g.everforest_enable_italic = true
       -- vim.g.everforest_disable_terminal_colors = false
       -- vim.g.everforest_background = 'hard'
@@ -831,7 +822,9 @@ require('lazy').setup({
       -- vim.cmd.colorscheme 'tokyonight'
       -- vim.cmd.colorscheme 'everforest'
       -- vim.cmd.colorscheme 'catppuccin-frappe'
-      vim.cmd.colorscheme 'onedark'
+      -- vim.cmd.colorscheme 'onedark'
+      -- vim.cmd.colorscheme 'OceanicNext'
+      vim.cmd.colorscheme 'onenord'
       -- vim.cmd.colorscheme 'vscode'
       -- vim.cmd.colorscheme 'nordic'
       -- vim.cmd.colorscheme 'OceanicNext'
