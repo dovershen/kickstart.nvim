@@ -314,7 +314,9 @@ require('lazy').setup({
               ['<c-enter>'] = 'to_fuzzy_refine',
               ['<C-j>'] = actions.move_selection_next,
               ['<C-k>'] = actions.move_selection_previous,
-              ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+              ['<C-q>s'] = actions.send_selected_to_qflist + actions.open_qflist,
+              ['<C-q>a'] = actions.add_selected_to_qflist,
+              ['<C-q>o'] = actions.open_qflist,
             },
           },
         },
@@ -781,6 +783,7 @@ require('lazy').setup({
     -- 'navarasu/onedark.nvim',
     -- 'mhartington/oceanic-next',
     'rmehri01/onenord.nvim',
+    -- 'SerhatTeker/neodarker.nvim',
     -- 'Mofiqul/vscode.nvim',
     -- 'folke/tokyonight',
     -- 'AlexvZyl/nordic.nvim',
@@ -792,6 +795,11 @@ require('lazy').setup({
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       require('onenord').setup {}
+      require('lualine').setup {
+        options = {
+          theme = 'onenord',
+        },
+      }
       -- vim.g.everforest_enable_italic = true
       -- vim.g.everforest_disable_terminal_colors = false
       -- vim.g.everforest_background = 'hard'
@@ -825,6 +833,7 @@ require('lazy').setup({
       -- vim.cmd.colorscheme 'onedark'
       -- vim.cmd.colorscheme 'OceanicNext'
       vim.cmd.colorscheme 'onenord'
+      -- vim.cmd.colorscheme 'neodarker'
       -- vim.cmd.colorscheme 'vscode'
       -- vim.cmd.colorscheme 'nordic'
       -- vim.cmd.colorscheme 'OceanicNext'
